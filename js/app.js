@@ -1,3 +1,8 @@
-/**
- * Created by jpujol on 04/12/2015.
- */
+var nifValidation = angular.module('nifValidation', []);
+
+nifValidation.controller('nifValidationController', ['$scope', function($scope) {
+
+    $scope.resetNumDocValue = function() {
+      $scope.docNum = '';
+    }
+}]);

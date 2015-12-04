@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>CIF, NIF and NIE validation</title>
+    <meta charset="UTF-8">
+    <link href="css/app.css" rel="stylesheet">
+</head>
+
+<body ng-app="nifValidation">
+    <h4>NIF Validation</h4>
+    <div ng-controller="nifValidationController">
+    <form name="nifValidationForm" novalidate>
+        <label for="docType">Document Type</label>
+        <select id="docType" name="docType" ng-model="docType" ng-change="resetNumDocValue()">
+            <option value="1">NIF</option>
+            <option value="2">NIE</option>
+            <option value="3">CIF</option>
+        </select>
+        <br/><br/>
+        <label for="docNumber">Document Number</label>
+        <input type="text" id="docNumber" name="docNumber" validate-ni-es ng-model="docNum"/>
+    </form>
+    </div>
+
+    <script src="vendors/angularjs-1.4.8/angularjs.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/validationFactory.js"></script>
+    <script src="js/validationDirective.js"></script>
+</body>
+</html>
